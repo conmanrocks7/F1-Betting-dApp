@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>F1 Betting</title>
+
+    <style>
+      .orange {
+        background-color: #F79900;
+        border-color: #F79900;
+      }
+      .orange:hover {
+        background-color: #CA7D00;
+        border-color: #CA7D00;
+      }
+      .orange:active {
+        background-color: #CA7D00;
+        border-color: #CA7D00;
+      }
+      .orange:focus {
+        background-color: #CA7D00;
+        border-color: #CA7D00;
+      }
+      .carousel-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 60px;
+      }
+      .shadow {
+        text-shadow: 10px 10px 10px #000000;
+      }
+      .background-img {
+        background-image: url('images/f1_2.jpeg');
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        transform: scale(1.1);
+      }
+      .imgWidth {
+        width: 100%;
+        height: auto;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .purple {
+        background-color: purple;
+      }
+      .width50 {
+        width: 50%;
+      }
+      .width100 {
+        width: 100%;
+      }
+      .feedback-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: white;
+      }
+      .feedback-inner {
+        background-color: #9B0000;
+        padding: 5px;
+        border-radius: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body onload="App.load()">
+
+
+
+    <header class="site-navbar" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="row width100">
+            <h1 class="mb-0 site-logo width50"><a href="#" class="text-white mb-0">F1 Betting</a></h1>
+            <div class="position-relative text-right width50">
+              <div class="site-menu js-clone-nav mr-auto ">
+                <button onclick="App.load()" id="connect-btn" class="btn orange">Connect wallet</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div>
+          <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/max-verstappen/_jcr_content/image.img.640.medium.jpg/1646819045507.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Max Verstappen</h5>
+                            <button onclick="App.placeBet('0')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/charles-leclerc/_jcr_content/image.img.640.medium.jpg/1646818893219.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Charles Leclerc</h5>
+                            <button onclick="App.placeBet('1')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/carlos-sainz/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Carlos Sainz</h5>
+                            <button onclick="App.placeBet('2')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/sergio-perez/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sergio Perez</h5>
+                            <button onclick="App.placeBet('3')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/george-russell/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">George Russell</h5>
+                            <button onclick="App.placeBet('4')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/lewis-hamilton/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lewis Hamilton</h5>
+                            <button onclick="App.placeBet('5')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/lando-norris/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lando Norris</h5>
+                            <button onclick="App.placeBet('6')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/daniel-ricciardo/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Daniel Ricciardo</h5>
+                            <button onclick="App.placeBet('7')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/fernando-alonso/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fernando Alonso</h5>
+                            <button onclick="App.placeBet('8')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/esteban-ocon/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Esteban Ocon</h5>
+                            <button onclick="App.placeBet('9')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/valtteri-bottas/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Valtteri Bottas</h5>
+                            <button onclick="App.placeBet('10')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/guanyu-zhou/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Zhou Guanyu</h5>
+                            <button onclick="App.placeBet('11')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/kevin-magnussen/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Kevin Magnussen</h5>
+                            <button onclick="App.placeBet('12')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/mick-schumacher/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mick Schumacher</h5>
+                            <button onclick="App.placeBet('13')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/pierre-gasly/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pierre Gasly</h5>
+                            <button onclick="App.placeBet('14')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/yuki-tsunoda/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Yuki Tsunoda</h5>
+                            <button onclick="App.placeBet('15')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/sebastian-vettel/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sebatian Vettel</h5>
+                            <button onclick="App.placeBet('16')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/lance-stroll/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lance Stroll</h5>
+                            <button onclick="App.placeBet('17')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/alexander-albon/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Alex Albon</h5>
+                            <button onclick="App.placeBet('18')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper"><img src="https://www.formula1.com/content/fom-website/en/drivers/nicholas-latifi/_jcr_content/image.img.640.medium.jpg/1646818866749.jpg" class="d-block w-100" alt="..."> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nicholas Latifi</h5>
+                            <button onclick="App.placeBet('19')" class="btn btn-primary btn">Place Bet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
+        </div>
+
+        <div class="feedback-container">
+          <div id="feedback" class="feedback-inner">
+            <h2>Your bet has been placed successfully</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </header>
+
+    <div class="hero background-img"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script> -->
+    <script src="js/carousel.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
